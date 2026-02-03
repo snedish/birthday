@@ -1,0 +1,242 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    overflow-x: hidden;
+}
+
+.page {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    position: relative;
+    background: #FFB6C1;
+}
+
+/* Card Container */
+.card {
+    background: #F5F5F0;
+    border-radius: 40px;
+    padding: 60px 50px;
+    max-width: 550px;
+    width: 100%;
+    text-align: center;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.15);
+    animation: cardAppear 0.6s ease-out;
+}
+
+/* Photo Character */
+.character {
+    width: 180px;
+    height: 180px;
+    margin: 0 auto 30px;
+    position: relative;
+}
+
+.photo-circle {
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 5px solid #FF1493;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+    animation: float 3s ease-in-out infinite;
+}
+
+.photo-circle img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center top;
+}
+
+/* Page 1 Specific */
+#page1 .card h1 {
+    font-size: 2.8rem;
+    margin-bottom: 20px;
+    color: #333;
+    font-weight: 700;
+}
+
+#page1 .card p {
+    font-size: 1.3rem;
+    color: #666;
+    margin-bottom: 35px;
+    line-height: 1.6;
+}
+
+.button-container {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    margin-top: 30px;
+}
+
+.btn {
+    padding: 18px 50px;
+    font-size: 1.3rem;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    font-family: inherit;
+}
+
+.btn-yes {
+    background: #FF1493;
+    color: white;
+}
+
+.btn-yes:hover {
+    background: #FF006E;
+    transform: scale(1.05);
+    box-shadow: 0 8px 20px rgba(255, 20, 147, 0.4);
+}
+
+.btn-no {
+    background: #E0E0E0;
+    color: #666;
+}
+
+.btn-no:hover {
+    background: #D0D0D0;
+    transform: scale(0.95);
+}
+
+.note {
+    margin-top: 20px;
+    font-size: 1rem;
+    color: #888;
+}
+
+/* Page 2 - Birthday Page */
+#page2 {
+    display: none;
+}
+
+#page2 .card {
+    position: relative;
+    overflow: visible;
+}
+
+#page2 .card h1 {
+    font-size: 3.5rem;
+    margin-bottom: 15px;
+    color: #333;
+    font-weight: 700;
+}
+
+#page2 .birthday-name {
+    font-size: 2.2rem;
+    margin-bottom: 25px;
+    color: #FF1493;
+    font-weight: 700;
+}
+
+#page2 .late-wish {
+    font-size: 1.2rem;
+    color: #666;
+    line-height: 1.8;
+    margin-top: 20px;
+}
+
+.emoji-large {
+    font-size: 2.5rem;
+    display: inline-block;
+    animation: bounce 1s infinite;
+}
+
+/* Cracker Animation */
+.cracker {
+    position: fixed;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 1000;
+}
+
+/* Animations */
+@keyframes cardAppear {
+    from {
+        opacity: 0;
+        transform: scale(0.8) translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+    }
+}
+
+@keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+
+@keyframes explode {
+    0% {
+        transform: translate(0, 0) scale(1);
+        opacity: 1;
+    }
+    100% {
+        transform: translate(var(--tx), var(--ty)) scale(0);
+        opacity: 0;
+    }
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0px) rotate(0deg); }
+    50% { transform: translateY(-20px) rotate(5deg); }
+}
+
+@keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    25% { transform: translateX(-10px) rotate(-2deg); }
+    75% { transform: translateX(10px) rotate(2deg); }
+}
+
+@media (max-width: 768px) {
+    .card {
+        padding: 40px 30px;
+        border-radius: 30px;
+    }
+    
+    #page1 .card h1 {
+        font-size: 2rem;
+    }
+    
+    #page1 .card p {
+        font-size: 1.1rem;
+    }
+    
+    #page2 .card h1 {
+        font-size: 2.5rem;
+    }
+    
+    #page2 .birthday-name {
+        font-size: 1.8rem;
+    }
+    
+    .btn {
+        padding: 15px 35px;
+        font-size: 1.1rem;
+    }
+    
+    .character {
+        width: 140px;
+        height: 140px;
+    }
+    
+    .photo-circle {
+        width: 140px;
+        height: 140px;
+    }
+}
