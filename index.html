@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Birthday Wishes</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Page 1 - Sorry Page -->
+    <div id="page1" class="page">
+        <div class="card">
+            <div class="character">
+                <div class="photo-circle">
+                    <img src="birthboy.jpg" alt="Muthe">
+                </div>
+            </div>
+            
+            <h1>Sorry Muthe 🙈</h1>
+            <p>I know I'm a bit late with your birthday wishes...</p>
+            
+            <div class="button-container">
+                <button class="btn btn-yes" onclick="showBirthdayPage()">That's okay!</button>
+                <button class="btn btn-no" onclick="shakeCard()">Not cool 😤</button>
+            </div>
+            
+            <div class="note">"Not cool" seems a bit harsh 😅</div>
+        </div>
+    </div>
+
+    <!-- Page 2 - Birthday Page -->
+    <div id="page2" class="page">
+        <div class="card" id="birthdayCard">
+            <div class="character">
+                <div class="photo-circle">
+                    <img src="birthboy.jpg" alt="Muthe">
+                </div>
+            </div>
+            
+            <h1><span class="emoji-large">🎉</span> Happy Birthday! <span class="emoji-large">🎉</span></h1>
+            <div class="birthday-name">Muthe</div>
+            <div class="late-wish">
+                <strong>Better late than never!</strong> 🎂<br><br>
+                Wishing you an absolutely wonderful year ahead filled with joy, laughter, amazing memories, and all the happiness you deserve! 🎈✨
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
